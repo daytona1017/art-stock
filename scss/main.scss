@@ -1,0 +1,18 @@
+/* CORE */
+@import "core/reset";
+@import "core/normalize";
+@import "core/mixins";
+@import "core/variables";
+@import "core/fonts";
+/* UTILITIES */
+@import "utilities/typography";
+@import "utilities/utils";
+/* COMPONENTS */
+@import "components/button.scss";
+@import "components/navbar";
+@import "components/footer";
+@import "components/sidebar.scss";
+@import "components/breadcrumb.scss";
+@import "components/form.scss";
+/*MODULES*/
+@import "modules/home.scss";
