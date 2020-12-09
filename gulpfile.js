@@ -25,7 +25,7 @@ gulp.task("js", async function () {
     .src([
       "node_modules/bootstrap/dist/js/bootstrap.min.js",
       "node_modules/jquery/dist/jquery.min.js",
-      "node_modules/popper.js/dist/popper.min.js",
+      "node_modules/@popperjs/core/dist/umd/popper.min.js",
     ])
     .pipe(gulp.dest("js"))
     .pipe(browserSync.stream());
@@ -40,7 +40,10 @@ gulp.task("browser-sync", async function () {
   });
 });
 
-gulp.task("default", gulp.series("sass", "js", "browser-sync", async function () {
-  gulp.watch("scss/**/*.scss", gulp.series("sass"));
-  gulp.watch("*.html").on("change", browserSync.reload);
-}));
+gulp.task(
+  "default",
+  gulp.series("sass", "js", "browser-sync", async function () {
+    gulp.watch("scss/**/*.scss", gulp.series("sass"));
+    gulp.watch("*.html").on("change", browserSync.reload);
+  })
+);
